@@ -8,4 +8,4 @@ const localServer = createProxyMiddleware({ target: 'http://197.156.65.6:7272' }
 
 app.use("/api/v1", localServer)
 
-app.listen(8000, () => { console.log('App listening on port 8000') })
+app.listen(7272, () => { console.log('App listening on port 8000') })
