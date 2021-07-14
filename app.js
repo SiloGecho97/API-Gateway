@@ -1,19 +1,11 @@
 const express = require("express")
 const app = require("express")()
 const helmet = require("helmet")
-const routes = require("./src/routes")
 const morgan = require('morgan')
-const PORT = process.env.PORT | 7171
+const PORT = process.env.PORT | 7272
 const axios = require('axios')
 const apiAdapter = require('./apiAxios')
 var router = express.Router()
-/**
- * Ports to use for public IP in tiltek server
- * 7171
- * 7272
- * 7373
- */
-
 const BASE_URL = process.env.APIURL | 'http://197.156.65.6:7171'
 const api = apiAdapter(BASE_URL)
 
