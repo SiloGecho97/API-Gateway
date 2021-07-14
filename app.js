@@ -18,6 +18,9 @@ app.use(morgan('tiny'))
 app.get('*', (req, res) => {
     api.get(req.path).then(resp => {
         res.send(resp.data)
+    }).catch(err => {
+        console.log(err)
+        res.send(resp.data)
     })
 })
 app.post("*", (req, res, next) => {
