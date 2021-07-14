@@ -15,27 +15,27 @@ app.use(express.static("public"))
 app.use(helmet())
 app.use(morgan('tiny'))
 // app.use(routes)
-router.get('*', (req, res) => {
+app.get('*', (req, res) => {
     api.get(req.path).then(resp => {
         res.send(resp.data)
     })
 })
-router.post("*", (req, res, next) => {
+app.post("*", (req, res, next) => {
     api.post(req.path, req.body).then(resp => {
         res.send(resp.data)
     })
 })
-router.put("*", (req, res, next) => {
+app.put("*", (req, res, next) => {
     api.put(req.path, req.body).then(resp => {
         res.send(resp.data)
     })
 })
-router.delete("*", (req, res, next) => {
+app.delete("*", (req, res, next) => {
     api.delete(req.path, req.body).then(resp => {
         res.send(resp.data)
     })
 })
-router.patch("*", (req, res, next) => {
+app.patch("*", (req, res, next) => {
     api.patch(req.path, req.body).then(resp => {
         res.send(resp.data)
     })
