@@ -7,10 +7,10 @@ const { createProxyMiddleware } = require('http-proxy-middleware')
 
 const app = express()
 app.use(morgan('tiny'))
-app.use(helmet())
+// app.use(helmet())
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+// app.use(express.json())
+// app.use(express.urlencoded({ extended: true }))
 
 const localServer = createProxyMiddleware({ target: 'http://197.156.65.6:7272' });
 app.use("/api/v1", localServer)
