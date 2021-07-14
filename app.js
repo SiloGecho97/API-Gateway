@@ -6,7 +6,7 @@ const PORT = process.env.PORT | 7272
 const axios = require('axios')
 const apiAdapter = require('./apiAxios')
 var router = express.Router()
-const BASE_URL = process.env.APIURL | 'http://197.156.65.6:7171'
+const BASE_URL = process.env.APIURL | 'http://197.156.65.6:7272'
 const api = apiAdapter(BASE_URL)
 
 app.use(express.json())
